@@ -21,7 +21,7 @@
     <ClCompile Include="Board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Block.cpp">
+    <ClCompile Include="Block-.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

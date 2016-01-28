@@ -14,8 +14,6 @@ Board::Board()
 	for (int i = 0; i < (size*size); i++)
 	{
 		blocks[i].value = i;
-		//if(i == (size*size)-1)
-			//blocks[i].value = 0;
 	}
 
 	randomizeBoard();
@@ -68,31 +66,6 @@ void Board::swap(int indexOne, int indexTwo)
 	blocks[indexOne] = blocks[indexTwo];
 	blocks[indexTwo] = tmpBlock;
 
-}
-
-void Board::makeMove(char moveDirection)
-{
-	switch (moveDirection)
-	{
-	case 'w':
-	case 'W':
-		moveUp();
-		break;
-	case 's':
-	case 'S':
-		moveDown();
-		break;
-	case 'a':
-	case 'A':
-		moveLeft();
-		break;
-	case 'd':
-	case 'D':
-		moveRight();
-		break;
-	default:
-		break;
-	}
 }
 
 void Board::moveUp()

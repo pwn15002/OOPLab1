@@ -13,7 +13,7 @@ Board::Board()
 
 	for (int i = 0; i < (size*size); i++)
 	{
-		blocks[i].value = i;
+		blocks[i].setValue(i);
 	}
 
 	randomizeBoard();
@@ -31,15 +31,7 @@ void Board::printBoard()
 	for (int i = 0; i < (size*size); i++)
 	{
 		
-		if (blocks[i].value / 10 <= 0)
-			spacer = " ";
-		else
-			spacer = "";
-		
-		if (blocks[i].value == 0)
-			cout << "[" << spacer << spacer << "]";
-		else
-			cout << "[" << spacer << blocks[i].value << "]";
+		blocks[i].print();
 
 		if ((i%size) == size - 1)
 			cout << endl;
@@ -49,7 +41,7 @@ void Board::printBoard()
 
 void Board::randomizeBoard()
 {
-	srand(time(NULL));
+	srand((int)time(NULL));
 	int numOfSwaps = 100;
 	int indexRange = size*size;
 

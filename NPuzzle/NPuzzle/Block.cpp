@@ -1,12 +1,13 @@
-#include "Block.h"
-
-#include <iostream>
 #include <string>
+#include <iostream>
 
+using namespace std;
+
+#include "Block.h"
 void Block::print()
 {
 	string spacer;
-
+	
 	if (value / 10 <= 0)
 		spacer = " ";
 	else
@@ -15,9 +16,12 @@ void Block::print()
 	if (value == 0)
 		cout << "[" << spacer << spacer << "]";
 	else
-		cout << "[" << spacer << blocks[i].value << "]";
+		cout << "[" << spacer << value << "]";
+
 }
 
-void Block::setValue()
+void Block::setValue(int value)
 {
+	if (value >= 0)
+		this->value = value;
 }

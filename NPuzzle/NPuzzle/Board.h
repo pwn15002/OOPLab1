@@ -1,17 +1,29 @@
+#ifndef BOARD_H
+#define BOARD_H
+
+#include <vector>
+
+#include "Block.h"
 
 class Board
 {
 private:
 	int size;
 	Block *blocks;
-	void randsomizeBoard();
+	//vector<Block> blocks;
+	void randomizeBoard();
 public:
 	Board();
-	~Board();
 	void printBoard();
-	void moveBlock();
 	bool isSorted();
-	void MakeMove();
+	void makeMove(char);
+	void moveUp();
+	void moveDown();
+	void moveLeft();
+	void moveRight();
+	void swap(int, int);
+	int findEmptyBlock();
 
 };
 
+#endif

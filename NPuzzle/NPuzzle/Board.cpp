@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <time.h>
 
 #include "Board.h"
 
@@ -7,17 +8,17 @@ using namespace std;
 
 Board::Board()
 {
-	size = 3;
+	size = 4;
 	blocks = new Block[size*size];
 
 	for (int i = 0; i < (size*size); i++)
 	{
-		blocks[i].value = i+1;
-		if(i == (size*size)-1)
-			blocks[i].value = 0;
+		blocks[i].value = i;
+		//if(i == (size*size)-1)
+			//blocks[i].value = 0;
 	}
 
-	//randomizeBoard();
+	randomizeBoard();
 }
 
 void Board::printBoard()
@@ -45,8 +46,8 @@ void Board::printBoard()
 
 void Board::randomizeBoard()
 {
-	srand(NULL);
-	int numOfSwaps = 1;
+	srand(time(NULL));
+	int numOfSwaps = 100;
 	int indexRange = size*size;
 
 		for (int i = 0; i < numOfSwaps; i++)

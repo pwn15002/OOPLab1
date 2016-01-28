@@ -19,7 +19,7 @@ Board::Board()
 	randomizeBoard();
 }
 
-Board::Board()
+Board::~Board()
 {
 	delete blocks;
 }

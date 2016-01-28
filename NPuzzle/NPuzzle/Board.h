@@ -1,8 +1,6 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <vector>
-
 #include "Block.h"
 
 class Board
@@ -10,7 +8,6 @@ class Board
 private:
 	int size;
 	Block *blocks;
-	//vector<Block> blocks;
 	void randomizeBoard();
 public:
 	Board();

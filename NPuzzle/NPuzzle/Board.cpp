@@ -7,15 +7,17 @@ using namespace std;
 
 Board::Board()
 {
-	size = 4;
+	size = 3;
 	blocks = new Block[size*size];
 
 	for (int i = 0; i < (size*size); i++)
 	{
-		blocks[i].value = i;
+		blocks[i].value = i+1;
+		if(i == (size*size)-1)
+			blocks[i].value = 0;
 	}
 
-	randomizeBoard();
+	//randomizeBoard();
 }
 
 void Board::printBoard()
@@ -44,7 +46,7 @@ void Board::printBoard()
 void Board::randomizeBoard()
 {
 	srand(NULL);
-	int numOfSwaps = 100;
+	int numOfSwaps = 1;
 	int indexRange = size*size;
 
 		for (int i = 0; i < numOfSwaps; i++)
@@ -93,19 +95,30 @@ void Board::moveUp()
 
 	if (emptyBlock - size >= 0)
 		swap(emptyBlock, emptyBlock - size);
-
 }
 
 void Board::moveDown()
 {
+	int emptyBlock = findEmptyBlock();
+
+	if (emptyBlock + size < (size*size))
+		swap(emptyBlock, emptyBlock + size);
 }
 
 void Board::moveLeft()
 {
+	int emptyBlock = findEmptyBlock();
+
+	if ((emptyBlock-1)%size < emptyBlock%size && emptyBlock > 0)
+		swap(emptyBlock, emptyBlock - 1);
 }
 
 void Board::moveRight()
 {
+	int emptyBlock = findEmptyBlock();
+
+	if ((emptyBlock + 1) % size > emptyBlock % size && emptyBlock < (size*size)-1)
+		swap(emptyBlock, emptyBlock + 1);
 }
 
 int Board::findEmptyBlock()
@@ -115,4 +128,18 @@ int Board::findEmptyBlock()
 		if (blocks[i].value == 0)
 			return i;
 	}
+	return -1;
+}
+
+bool Board::isSorted()
+{
+
+	for (int i = 0; i < size*size; i++)
+	{
+		if (blocks[i].value != i + 1 && i < (size*size)-1)
+			return false;
+	}
+
+	return true;
+
 }

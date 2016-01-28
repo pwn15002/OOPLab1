@@ -15,7 +15,16 @@ int main() {
 
 		board.makeMove(_getch());
 
+		system("cls");
+		if (board.isSorted() == true)
+		{
+			break;
+		}
 
 	}
+	board.printBoard();
+	cout << "You Won!";
+
+	_getch();
 	return 0;
 }

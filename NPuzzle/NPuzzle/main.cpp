@@ -1,6 +1,5 @@
 #include <iostream>
 #include <conio.h>
-#include <string>
 #include "Board.h"
 
 using namespace std;
@@ -9,30 +8,33 @@ int main() {
 
 	Board board;
 	char userInput = NULL;
-
 	while (true)
 	{
 
 		board.printBoard();
 
-		userInput = _getch();
-
+		char userInput = _getch();
+		
 		switch (userInput)
 		{
 		case 'w':
 		case 'W':
+		case 80:
 			board.moveUp();
 			break;
 		case 's':
 		case 'S':
+		case 72:
 			board.moveDown();
 			break;
 		case 'a':
 		case 'A':
+		case 77:
 			board.moveLeft();
 			break;
 		case 'd':
 		case 'D':
+		case 75:
 			board.moveRight();
 			break;
 		default:

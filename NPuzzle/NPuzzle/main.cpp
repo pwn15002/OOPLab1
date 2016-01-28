@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <string>
 #include "Board.h"
 
 using namespace std;
@@ -7,13 +8,14 @@ using namespace std;
 int main() {
 
 	Board board;
+	char userInput = NULL;
 
 	while (true)
 	{
 
 		board.printBoard();
 
-		char userInput = _getch();
+		userInput = _getch();
 
 		switch (userInput)
 		{

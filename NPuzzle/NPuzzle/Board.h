@@ -11,6 +11,7 @@ private:
 	void randomizeBoard();
 public:
 	Board();
+	~Board();
 	void printBoard();
 	bool isSorted();
 	void makeMove(char);

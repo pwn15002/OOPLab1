@@ -21,6 +21,11 @@ Board::Board()
 	randomizeBoard();
 }
 
+Board::Board()
+{
+	delete blocks;
+}
+
 void Board::printBoard()
 {
 	string spacer;

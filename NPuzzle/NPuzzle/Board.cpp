@@ -26,8 +26,6 @@ Board::~Board()
 
 void Board::printBoard()
 {
-	string spacer;
-
 	for (int i = 0; i < (size*size); i++)
 	{
 		
